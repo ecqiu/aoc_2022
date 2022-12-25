@@ -126,24 +126,23 @@ NumericVector max_calc_cpp(double n_geo_req,NumericVector blueprint,double tl_mi
 }
 
 // [[Rcpp::depends(BH)]]
-
-#include <boost/lexical_cast.hpp>  
-using boost::lexical_cast;
-using boost::bad_lexical_cast;
-std::vector<std::string> lexicalCast(std::vector<double> v) {
-
-    std::vector<std::string> res(v.size());
-
-    for (unsigned int i=0; i<v.size(); i++) {
-        try {
-            res[i] = lexical_cast<std::string>(v[i]);
-        } catch(bad_lexical_cast &) {
-            res[i] = "(failed)";
-        }
-    }
-
-    return res;
-}
+// #include <boost/lexical_cast.hpp>  
+// using boost::lexical_cast;
+// using boost::bad_lexical_cast;
+// std::vector<std::string> lexicalCast(std::vector<double> v) {
+// 
+//     std::vector<std::string> res(v.size());
+// 
+//     for (unsigned int i=0; i<v.size(); i++) {
+//         try {
+//             res[i] = lexical_cast<std::string>(v[i]);
+//         } catch(bad_lexical_cast &) {
+//             res[i] = "(failed)";
+//         }
+//     }
+// 
+//     return res;
+// }
 
 
 std::string v_to_str(NumericVector v){
